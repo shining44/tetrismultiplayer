@@ -6,8 +6,6 @@
 
 A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built with Next.js 16, TypeScript, Tailwind CSS, and shadcn/ui.
 
-[![Deploy to GitHub Pages](https://github.com/shining44/tetrismultiplayer/actions/workflows/deploy.yml/badge.svg)](https://github.com/shining44/tetrismultiplayer/actions/workflows/deploy.yml)
-
 [فارسی](#) | [English](#)
 
 </div>
@@ -20,8 +18,6 @@ A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built wit
 - **Responsive**: Fully responsive design for all device sizes
 - **Fast**: Static site generation for optimal performance
 - **SEO Optimized**: Meta tags and Open Graph support for both languages
-- **Accessible**: Proper ARIA labels and keyboard navigation
-- **GitHub Pages Ready**: Automatic deployment with GitHub Actions
 
 ## Tech Stack
 
@@ -31,7 +27,6 @@ A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built wit
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
 - **Fonts**: Vazirmatn (Persian), System fonts (English)
-- **Deployment**: GitHub Pages with GitHub Actions
 
 ## Getting Started
 
@@ -59,42 +54,40 @@ Static files will be generated in the `out/` directory.
 
 ## GitHub Pages Deployment
 
-This project is configured for automatic deployment to GitHub Pages.
+### Deploy to GitHub Pages
 
-### Automatic Deployment
+```bash
+npm run deploy
+```
 
-1. Push your changes to the `main` or `master` branch
-2. GitHub Actions will automatically build and deploy to GitHub Pages
-3. Your site will be available at `https://<username>.github.io/<repo-name>/`
+This will:
+1. Build the static site
+2. Push to the `gh-pages` branch
+3. Your site will be live at `https://<username>.github.io/<repo-name>/`
 
-### Manual Setup
+### First-time Setup
 
-If you're setting this up for the first time:
+1. Run `npm run deploy`
+2. Go to your repo **Settings** > **Pages**
+3. Set source to **Deploy from a branch**
+4. Select `gh-pages` branch, `/ (root)` folder
+5. Save
 
-1. Go to your repository **Settings** > **Pages**
-2. Under "Build and deployment", select **GitHub Actions** as the source
-3. Push to `main` or `master` branch to trigger deployment
-
-### Using a Custom Domain
+### Custom Domain
 
 To use a custom domain (e.g., `koohsaran.com`):
 
-1. Add a `CNAME` file to the `public/` folder with your domain:
+1. Add a `CNAME` file to `public/` with your domain:
    ```
    koohsaran.com
    ```
 
-2. Update `next.config.ts` to remove the basePath:
+2. Update `next.config.ts` - remove basePath:
    ```ts
    const nextConfig: NextConfig = {
      output: "export",
      trailingSlash: true,
-     images: {
-       unoptimized: true,
-     },
-     // Remove or comment out basePath and assetPrefix for custom domain
-     // basePath: "",
-     // assetPrefix: "",
+     images: { unoptimized: true },
    };
    ```
 
@@ -106,90 +99,31 @@ To use a custom domain (e.g., `koohsaran.com`):
 src/
 ├── app/
 │   ├── [locale]/           # Locale-based routing (fa/en)
-│   │   ├── layout.tsx      # Locale layout with RTL support
-│   │   └── page.tsx        # Home page
-│   ├── globals.css         # Global styles & CSS variables
-│   ├── layout.tsx          # Root layout
-│   └── page.tsx            # Root redirect to default locale
+│   ├── globals.css         # Global styles
+│   └── page.tsx            # Root redirect
 ├── components/
-│   ├── layout/             # Header, Footer components
-│   ├── sections/           # Page sections (Hero, About, etc.)
+│   ├── layout/             # Header, Footer
+│   ├── sections/           # Page sections
 │   └── ui/                 # shadcn/ui components
-├── lib/
-│   ├── data.ts             # Static data (projects, partners, etc.)
-│   └── utils.ts            # Utility functions
-├── locales/
-│   ├── fa.ts               # Persian translations
-│   ├── en.ts               # English translations
-│   └── index.ts            # Locale exports
-└── types/
-    └── i18n.ts             # TypeScript types for i18n
-
-.github/
-└── workflows/
-    └── deploy.yml          # GitHub Actions workflow for deployment
+├── lib/                    # Utilities and data
+├── locales/                # Translations (fa, en)
+└── types/                  # TypeScript types
 ```
-
-## Sections
-
-1. **Hero**: Company introduction with key statistics
-2. **About**: Company history, mission, vision, and values
-3. **Products & Services**: HVAC equipment and services catalog
-4. **Projects**: Showcase of 700+ completed projects with category filtering
-5. **Certifications**: ISO, LEED certifications and international partners
-6. **Contact**: Contact form and company information
-
-## Company Information
-
-**Koohsaran HVAC Company** (شرکت تهویه کوهساران)
-
-- **Founded**: 1997 (1375 in Persian calendar)
-- **Location**: Tehran, Iran
-- **Specialization**: HVAC systems, mechanical installations
-- **Projects**: 700+ completed projects
-- **Capital**: 80 Billion Rials
-- **Certifications**: ISO 9001, ISO 14001, LEED
-
-### International Partners
-
-- **Blue Star** (India) - Largest HVAC manufacturer in India
-- **Thermax** (India) - Absorption chillers specialist
-- **Vicot** (China) - Comprehensive HVAC solutions
-- **Engie** (Germany) - Magnetic Turbocor chillers
-- **K-FLEX** (Italy) - Elastomeric insulation
 
 ## URLs
 
 - Persian (default): `/fa/`
 - English: `/en/`
 
-## Customization
+## Company Information
 
-### Adding New Languages
+**Koohsaran HVAC Company** (شرکت تهویه کوهساران)
 
-1. Create a new translation file in `src/locales/` (e.g., `ar.ts`)
-2. Add the locale to the `locales` array in `src/locales/index.ts`
-3. Update the types in `src/types/i18n.ts`
-
-### Modifying Theme Colors
-
-Edit the CSS variables in `src/app/globals.css`:
-
-```css
-:root {
-  --primary: 217 91% 45%; /* Main brand color */
-  /* ... other colors */
-}
-```
+- Founded: 1997 | Location: Tehran, Iran
+- 700+ completed projects
+- Partners: Blue Star, Thermax, Vicot, Engie, K-FLEX
+- Certifications: ISO 9001, ISO 14001, LEED
 
 ## License
 
 All rights reserved - Koohsaran HVAC Company
-
----
-
-<div align="center">
-
-Made with ❤️ for **Koohsaran HVAC**
-
-</div>
