@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
 2:I[39756,["/tetrismultiplayer/_next/static/chunks/ff1a16fafef87110.js","/tetrismultiplayer/_next/static/chunks/7340adf74ff47ec0.js"],"default"]
 3:I[37457,["/tetrismultiplayer/_next/static/chunks/ff1a16fafef87110.js","/tetrismultiplayer/_next/static/chunks/7340adf74ff47ec0.js"],"default"]
-0:{"buildId":"foG_hxxmgLLfp2rxZEiDJ","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"6qyuAxSjxCEDlHK-W-8Bx","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}

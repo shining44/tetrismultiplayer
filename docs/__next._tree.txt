@@ -1,2 +1,2 @@
-:HL["/tetrismultiplayer/_next/static/chunks/e3a125c7f8f61d8b.css","style"]
-0:{"buildId":"foG_hxxmgLLfp2rxZEiDJ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/tetrismultiplayer/_next/static/chunks/139d3ecfb4bdd045.css","style"]
+0:{"buildId":"6qyuAxSjxCEDlHK-W-8Bx","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
