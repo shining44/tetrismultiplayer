@@ -32,7 +32,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
   }
 
   return (
-    <section id="projects" className="py-20 lg:py-28 bg-white dark:bg-slate-950">
+    <section id="projects" className="py-20 lg:py-28 bg-white dark:bg-[#1e3a5f]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className={cn(
@@ -45,7 +45,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.projects.title}
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-sky-200">
             {t.projects.subtitle}
           </p>
         </div>
@@ -54,7 +54,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
         <Tabs defaultValue="all" className="w-full">
           <div className={cn("flex justify-center mb-8", isRTL && "flex-row-reverse")}>
             <TabsList className={cn(
-              "flex-wrap h-auto gap-2 bg-slate-100 dark:bg-slate-800 p-2 rounded-xl",
+              "flex-wrap h-auto gap-2 bg-slate-100 dark:bg-[#3a5a80] p-2 rounded-xl",
               isRTL && "flex-row-reverse"
             )}>
               {categories.map((cat) => (
@@ -75,12 +75,12 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                 {getFilteredProjects(cat.id).map((project) => (
                   <Card
                     key={project.id}
-                    className="group overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-slate-800"
+                    className="group overflow-hidden border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-[#3a5a80]"
                   >
                     {/* Project Image Placeholder */}
                     <div className="relative h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Building2 className="h-16 w-16 text-slate-300 dark:text-slate-600" />
+                        <Building2 className="h-16 w-16 text-slate-300 dark:text-sky-400" />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       <Badge className={cn(
@@ -96,7 +96,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                         {isRTL ? project.nameFA : project.nameEN}
                       </h3>
                       <div className={cn(
-                        "flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400",
+                        "flex items-center gap-2 text-sm text-slate-500 dark:text-sky-200",
                         isRTL && "flex-row-reverse"
                       )}>
                         <MapPin className="h-4 w-4" />
@@ -120,7 +120,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">{stat.label}</div>
+              <div className="text-sm text-slate-600 dark:text-sky-200">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -15,7 +15,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
   const isRTL = locale === "fa"
 
   return (
-    <section id="certifications" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
+    <section id="certifications" className="py-20 lg:py-28 bg-slate-50 dark:bg-[#264b73]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className={cn(
@@ -28,7 +28,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.certifications.title}
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-sky-200">
             {t.certifications.subtitle}
           </p>
         </div>
@@ -38,7 +38,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
           {certifications.map((cert, index) => (
             <Card
               key={index}
-              className="border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 group bg-white dark:bg-slate-800"
+              className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-lg transition-all duration-300 group bg-white dark:bg-[#3a5a80]"
             >
               <CardContent className="p-6 text-center">
                 <div className={cn(
@@ -50,7 +50,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
                   {isRTL ? cert.nameFA : cert.name}
                 </h3>
                 <p className={cn(
-                  "text-sm text-slate-600 dark:text-slate-400 mb-2",
+                  "text-sm text-slate-600 dark:text-sky-100 mb-2",
                   isRTL && "leading-relaxed"
                 )}>
                   {isRTL ? cert.descriptionFA : cert.description}
@@ -76,11 +76,11 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
             {partners.map((partner, index) => (
               <Card
                 key={index}
-                className="border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 group bg-white dark:bg-slate-800"
+                className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-all duration-300 group bg-white dark:bg-[#3a5a80]"
               >
                 <CardContent className="p-6 text-center">
                   {/* Logo Placeholder */}
-                  <div className="w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-primary/8 transition-colors mx-auto border border-slate-100 dark:border-slate-600">
+                  <div className="w-20 h-20 rounded-xl bg-slate-50 dark:bg-[#264b73] flex items-center justify-center mb-4 group-hover:bg-primary/8 transition-colors mx-auto border border-slate-100 dark:border-sky-600">
                     <Globe2 className="h-10 w-10 text-slate-400 group-hover:text-primary transition-colors" />
                   </div>
                   <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
@@ -90,7 +90,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
                     {isRTL ? partner.countryFA : partner.country}
                   </p>
                   <p className={cn(
-                    "text-xs text-slate-500 dark:text-slate-400",
+                    "text-xs text-slate-500 dark:text-sky-200",
                     isRTL && "leading-relaxed"
                   )}>
                     {isRTL ? partner.descriptionFA : partner.description}
@@ -102,7 +102,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
         </div>
 
         {/* Additional Features */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8 p-8 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
+        <div className="mt-16 grid md:grid-cols-3 gap-8 p-8 bg-white dark:bg-[#3a5a80] rounded-2xl border border-slate-100 dark:border-sky-700/50 shadow-sm">
           {[
             {
               icon: Shield,
@@ -138,7 +138,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
                   {isRTL ? feature.titleFA : feature.titleEN}
                 </h4>
                 <p className={cn(
-                  "text-sm text-slate-600 dark:text-slate-400",
+                  "text-sm text-slate-600 dark:text-sky-100",
                   isRTL && "leading-relaxed"
                 )}>
                   {isRTL ? feature.descFA : feature.descEN}

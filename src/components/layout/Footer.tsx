@@ -31,7 +31,7 @@ export function Footer({ t, locale }: FooterProps) {
   ]
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-slate-900 dark:bg-[#162a45] text-slate-300">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className={cn(
@@ -66,7 +66,7 @@ export function Footer({ t, locale }: FooterProps) {
                 href="https://instagram.com/tahvieh.koohsaran"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 p-2.5 rounded-xl hover:bg-primary transition-colors"
+                className="bg-slate-800 dark:bg-[#1e3a5f] p-2.5 rounded-xl hover:bg-primary transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -74,7 +74,7 @@ export function Footer({ t, locale }: FooterProps) {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-slate-800 p-2.5 rounded-xl hover:bg-primary transition-colors"
+                className="bg-slate-800 dark:bg-[#1e3a5f] p-2.5 rounded-xl hover:bg-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -163,7 +163,7 @@ export function Footer({ t, locale }: FooterProps) {
       </div>
 
       {/* Bottom Bar */}
-      <Separator className="bg-slate-800" />
+      <Separator className="bg-slate-800 dark:bg-sky-800/50" />
       <div className="container mx-auto px-4 py-6">
         <div className={cn(
           "flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400",

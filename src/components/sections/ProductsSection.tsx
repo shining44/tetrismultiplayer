@@ -54,7 +54,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
   ]
 
   return (
-    <section id="products" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
+    <section id="products" className="py-20 lg:py-28 bg-slate-50 dark:bg-[#264b73]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className={cn(
@@ -67,7 +67,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.products.title}
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-sky-200">
             {t.products.subtitle}
           </p>
         </div>
@@ -77,7 +77,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
           {products.map((product, index) => (
             <Card
               key={index}
-              className="group border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer bg-white dark:bg-slate-800"
+              className="group border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer bg-white dark:bg-[#3a5a80]"
             >
               <CardHeader className="pb-2">
                 <div className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}>
@@ -96,7 +96,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
               </CardHeader>
               <CardContent>
                 <CardDescription className={cn(
-                  "text-slate-600 dark:text-slate-400 leading-relaxed",
+                  "text-slate-600 dark:text-sky-100 leading-relaxed",
                   isRTL && "leading-loose"
                 )}>
                   {product.description}
@@ -120,7 +120,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
               <div
                 key={index}
                 className={cn(
-                  "flex items-start gap-4 p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow",
+                  "flex items-start gap-4 p-6 bg-white dark:bg-[#3a5a80] rounded-xl border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow",
                   isRTL && "flex-row-reverse"
                 )}
               >
@@ -132,7 +132,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
                     {isRTL ? service.titleFA : service.titleEN}
                   </h4>
                   <p className={cn(
-                    "text-sm text-slate-600 dark:text-slate-400",
+                    "text-sm text-slate-600 dark:text-sky-100",
                     isRTL && "leading-relaxed"
                   )}>
                     {isRTL ? service.descFA : service.descEN}

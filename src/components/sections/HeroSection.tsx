@@ -23,9 +23,9 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
   ]
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-slate-950">
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-white dark:bg-[#1e3a5f]">
       {/* Clean Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white dark:from-slate-900 dark:via-slate-950 dark:to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-white to-white dark:from-[#264b73] dark:via-[#1e3a5f] dark:to-[#1e3a5f]" />
 
       {/* Subtle Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -73,7 +73,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
 
           {/* Description */}
           <p className={cn(
-            "text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-2xl leading-relaxed",
+            "text-lg md:text-xl text-slate-600 dark:text-sky-100 mb-10 max-w-2xl leading-relaxed",
             isRTL && "leading-loose"
           )}>
             {t.hero.description}
@@ -99,7 +99,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
 
           {/* Stats */}
           <div className={cn(
-            "grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-10 border-t border-slate-100 dark:border-slate-800"
+            "grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-10 border-t border-slate-100 dark:border-sky-700/50"
           )}>
             {stats.map((stat, index) => (
               <div key={index} className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
@@ -108,7 +108,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
                 </div>
                 <div className={isRTL ? "text-right" : "text-left"}>
                   <div className="text-2xl font-bold text-slate-800 dark:text-white">{stat.value}</div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">{stat.label}</div>
+                  <div className="text-sm text-slate-500 dark:text-sky-200">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -119,8 +119,8 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400">
         <span className="text-xs font-medium">{isRTL ? "اسکرول کنید" : "Scroll down"}</span>
-        <div className="w-6 h-10 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-start justify-center p-1">
-          <div className="w-1.5 h-3 bg-slate-300 dark:bg-slate-600 rounded-full animate-bounce" />
+        <div className="w-6 h-10 rounded-full border-2 border-slate-200 dark:border-sky-600 flex items-start justify-center p-1">
+          <div className="w-1.5 h-3 bg-slate-300 dark:bg-sky-400 rounded-full animate-bounce" />
         </div>
       </div>
     </section>
