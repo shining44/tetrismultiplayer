@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
-/* Import Vazirmatn from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+/* Vazirmatn font is loaded via link tag in layout.tsx for better performance */
 
 :root {
   /* Modern Brand Colors - Clean and Professional */
@@ -43,23 +42,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 220 15% 95%;
+    /* Lighter blue dark mode palette */
+    --primary: 215 75% 60%;
+    --primary-foreground: 220 25% 10%;
 
-    --muted: 220 20% 12%;
-    --muted-foreground: 220 10% 60%;
+    --background: 215 35% 18%;
+    --foreground: 210 30% 96%;
 
-    --accent: 220 20% 15%;
-    --accent-foreground: 220 15% 95%;
+    --muted: 215 30% 24%;
+    --muted-foreground: 210 20% 72%;
 
-    --card: 220 20% 10%;
-    --card-foreground: 220 15% 95%;
+    --accent: 215 35% 28%;
+    --accent-foreground: 210 30% 96%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 220 15% 95%;
+    --card: 215 32% 22%;
+    --card-foreground: 210 30% 96%;
 
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
+    --popover: 215 32% 22%;
+    --popover-foreground: 210 30% 96%;
+
+    --border: 215 28% 32%;
+    --input: 215 28% 32%;
+
+    --ring: 215 75% 60%;
+
+    --secondary: 215 30% 26%;
+    --secondary-foreground: 210 30% 96%;
   }
 }
 
@@ -104,10 +112,44 @@ body {
 /* RTL Support with Vazirmatn from Google Fonts */
 [dir="rtl"] {
   font-family: 'Vazirmatn', var(--font-sans), system-ui, sans-serif;
+  /* Increase base font size for Farsi text readability */
+  font-size: 110%;
+  line-height: 1.8;
 }
 
 [dir="rtl"] * {
   font-family: inherit;
+}
+
+/* Larger headings for RTL */
+[dir="rtl"] h1 {
+  font-size: 2.75rem;
+  line-height: 1.3;
+}
+
+[dir="rtl"] h2 {
+  font-size: 2rem;
+  line-height: 1.4;
+}
+
+[dir="rtl"] h3 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+[dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  line-height: 1.5;
+}
+
+[dir="rtl"] p, [dir="rtl"] li, [dir="rtl"] span, [dir="rtl"] a {
+  font-size: 1.05em;
+  line-height: 1.9;
+}
+
+/* Ensure buttons and smaller text are also readable */
+[dir="rtl"] button, [dir="rtl"] .btn {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Ensure numbers remain in correct direction in RTL */

@@ -54,7 +54,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
   ]
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-white dark:bg-slate-950">
+    <section id="contact" className="py-20 lg:py-28 bg-white dark:bg-[#1e3a5f]">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className={cn(
@@ -67,7 +67,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.contact.title}
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
+          <p className="text-lg text-slate-600 dark:text-sky-200">
             {t.contact.subtitle}
           </p>
         </div>
@@ -150,7 +150,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
 
           {/* Contact Form */}
           <div className={cn("lg:col-span-3", isRTL && "lg:order-1")}>
-            <Card className="border border-slate-100 dark:border-slate-800 shadow-sm">
+            <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm dark:bg-[#3a5a80]">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -160,7 +160,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                         id="name"
                         placeholder={isRTL ? "نام شما" : "Your name"}
                         required
-                        className="border-slate-200 dark:border-slate-700 focus:border-primary"
+                        className="border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]"
                       />
                     </div>
                     <div className="space-y-2">
@@ -172,7 +172,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                         required
                         dir="ltr"
                         className={cn(
-                          "border-slate-200 dark:border-slate-700 focus:border-primary",
+                          "border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]",
                           isRTL && "text-left"
                         )}
                       />
@@ -188,7 +188,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                         placeholder={isRTL ? "۰۹۱۲۳۴۵۶۷۸۹" : "09123456789"}
                         dir="ltr"
                         className={cn(
-                          "border-slate-200 dark:border-slate-700 focus:border-primary",
+                          "border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]",
                           isRTL && "text-left"
                         )}
                       />
@@ -198,7 +198,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                       <Input
                         id="subject"
                         placeholder={isRTL ? "موضوع پیام" : "Message subject"}
-                        className="border-slate-200 dark:border-slate-700 focus:border-primary"
+                        className="border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]"
                       />
                     </div>
                   </div>
@@ -210,7 +210,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                       placeholder={isRTL ? "پیام خود را بنویسید..." : "Write your message..."}
                       required
                       className={cn(
-                        "min-h-[150px] border-slate-200 dark:border-slate-700 focus:border-primary",
+                        "min-h-[150px] border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]",
                         isRTL && "leading-relaxed"
                       )}
                     />
@@ -250,8 +250,8 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
 
         {/* Map Placeholder */}
         <div className="mt-12">
-          <Card className="border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
-            <div className="h-[300px] bg-slate-50 dark:bg-slate-800 flex items-center justify-center">
+          <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm overflow-hidden">
+            <div className="h-[300px] bg-slate-50 dark:bg-[#3a5a80] flex items-center justify-center">
               <div className="text-center text-slate-400">
                 <MapPin className="h-12 w-12 mx-auto mb-4 text-slate-300" />
                 <p className="text-lg font-medium text-slate-500">

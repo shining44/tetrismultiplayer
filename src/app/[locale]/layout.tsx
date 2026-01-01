@@ -64,6 +64,11 @@ export default async function LocaleLayout({
         {/* Google Fonts preconnect for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Vazirmatn font for Farsi/Persian text */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <Header t={t} locale={locale} />

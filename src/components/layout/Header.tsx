@@ -93,8 +93,8 @@ export function Header({ t, locale }: HeaderProps) {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-300",
           isScrolled
-            ? "bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-slate-800"
-            : "bg-white dark:bg-slate-950"
+            ? "bg-white/95 dark:bg-[#1e3a5f]/95 backdrop-blur-md shadow-sm border-b border-slate-100 dark:border-sky-800/50"
+            : "bg-white dark:bg-[#1e3a5f]"
         )}
       >
         <div className="container mx-auto px-4">
@@ -108,7 +108,7 @@ export function Header({ t, locale }: HeaderProps) {
                 <span className="font-bold text-lg leading-tight text-slate-800 dark:text-white">
                   {isRTL ? "کوهساران" : "Koohsaran"}
                 </span>
-                <span className="text-xs text-slate-500 dark:text-slate-400">
+                <span className="text-xs text-slate-500 dark:text-sky-300">
                   {isRTL ? "تهویه مطبوع" : "HVAC Solutions"}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export function Header({ t, locale }: HeaderProps) {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary",
+                    "px-4 py-2 text-sm font-medium rounded-lg transition-colors text-slate-600 dark:text-sky-100 hover:bg-slate-50 dark:hover:bg-sky-800/40 hover:text-primary",
                     pathname === item.href && "bg-primary/8 text-primary"
                   )}
                 >
@@ -152,7 +152,7 @@ export function Header({ t, locale }: HeaderProps) {
                   <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side={isRTL ? "right" : "left"} className="w-[300px] bg-white dark:bg-slate-950">
+              <SheetContent side={isRTL ? "right" : "left"} className="w-[300px] bg-white dark:bg-[#1e3a5f]">
                 <SheetTitle className={cn(
                   "flex items-center gap-3 mb-8",
                   isRTL && "flex-row-reverse justify-end"
@@ -171,14 +171,14 @@ export function Header({ t, locale }: HeaderProps) {
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className={cn(
-                        "px-4 py-3 text-base font-medium rounded-lg transition-colors text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800",
+                        "px-4 py-3 text-base font-medium rounded-lg transition-colors text-slate-600 dark:text-sky-100 hover:bg-slate-50 dark:hover:bg-sky-800/40",
                         pathname === item.href && "bg-primary/8 text-primary"
                       )}
                     >
                       {item.label}
                     </Link>
                   ))}
-                  <div className="border-t border-slate-100 dark:border-slate-800 my-4" />
+                  <div className="border-t border-slate-100 dark:border-sky-700/50 my-4" />
                   <Link
                     href={`/${otherLocale}${pathname.replace(`/${locale}`, "")}`}
                     onClick={() => setIsOpen(false)}
