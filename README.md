@@ -6,7 +6,9 @@
 
 A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built with Next.js 16, TypeScript, Tailwind CSS, and shadcn/ui.
 
-[فارسی](http://localhost:3000/fa) | [English](http://localhost:3000/en)
+[![Deploy to GitHub Pages](https://github.com/shining44/tetrismultiplayer/actions/workflows/deploy.yml/badge.svg)](https://github.com/shining44/tetrismultiplayer/actions/workflows/deploy.yml)
+
+[فارسی](#) | [English](#)
 
 </div>
 
@@ -19,6 +21,7 @@ A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built wit
 - **Fast**: Static site generation for optimal performance
 - **SEO Optimized**: Meta tags and Open Graph support for both languages
 - **Accessible**: Proper ARIA labels and keyboard navigation
+- **GitHub Pages Ready**: Automatic deployment with GitHub Actions
 
 ## Tech Stack
 
@@ -28,6 +31,7 @@ A modern, bilingual (Farsi/English) website for Koohsaran HVAC Company built wit
 - **UI Components**: shadcn/ui
 - **Icons**: Lucide React
 - **Fonts**: Vazirmatn (Persian), System fonts (English)
+- **Deployment**: GitHub Pages with GitHub Actions
 
 ## Getting Started
 
@@ -43,7 +47,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) - will redirect to [http://localhost:3000/fa](http://localhost:3000/fa) (Persian version by default)
+Open [http://localhost:3000](http://localhost:3000) - will redirect to `/fa` (Persian version by default)
 
 ### Build
 
@@ -51,11 +55,50 @@ Open [http://localhost:3000](http://localhost:3000) - will redirect to [http://l
 npm run build
 ```
 
-### Production
+Static files will be generated in the `out/` directory.
 
-```bash
-npm run start
-```
+## GitHub Pages Deployment
+
+This project is configured for automatic deployment to GitHub Pages.
+
+### Automatic Deployment
+
+1. Push your changes to the `main` or `master` branch
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Your site will be available at `https://<username>.github.io/<repo-name>/`
+
+### Manual Setup
+
+If you're setting this up for the first time:
+
+1. Go to your repository **Settings** > **Pages**
+2. Under "Build and deployment", select **GitHub Actions** as the source
+3. Push to `main` or `master` branch to trigger deployment
+
+### Using a Custom Domain
+
+To use a custom domain (e.g., `koohsaran.com`):
+
+1. Add a `CNAME` file to the `public/` folder with your domain:
+   ```
+   koohsaran.com
+   ```
+
+2. Update `next.config.ts` to remove the basePath:
+   ```ts
+   const nextConfig: NextConfig = {
+     output: "export",
+     trailingSlash: true,
+     images: {
+       unoptimized: true,
+     },
+     // Remove or comment out basePath and assetPrefix for custom domain
+     // basePath: "",
+     // assetPrefix: "",
+   };
+   ```
+
+3. Configure your domain's DNS to point to GitHub Pages
 
 ## Project Structure
 
@@ -81,6 +124,10 @@ src/
 │   └── index.ts            # Locale exports
 └── types/
     └── i18n.ts             # TypeScript types for i18n
+
+.github/
+└── workflows/
+    └── deploy.yml          # GitHub Actions workflow for deployment
 ```
 
 ## Sections
@@ -113,8 +160,8 @@ src/
 
 ## URLs
 
-- Persian (default): `/fa`
-- English: `/en`
+- Persian (default): `/fa/`
+- English: `/en/`
 
 ## Customization
 
