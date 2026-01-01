@@ -51,7 +51,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
       <div className="container mx-auto px-4 relative z-10">
         <div className={cn(
           "max-w-4xl",
-          isRTL ? "mr-auto ml-0" : "ml-0 mr-auto"
+          isRTL ? "mr-auto ml-0 text-right" : "ml-0 mr-auto text-left"
         )}>
           {/* Badge */}
           <div className={cn(

@@ -59,7 +59,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          isRTL ? "mr-auto ml-0 text-right" : "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "تماس با ما" : "Contact Us"}
