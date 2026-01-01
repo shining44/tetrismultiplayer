@@ -59,7 +59,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          !isRTL && "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "محصولات و خدمات" : "Products & Services"}
@@ -80,7 +80,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
               className="group border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer bg-white dark:bg-[#3a5a80]"
             >
               <CardHeader className="pb-2">
-                <div className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}>
+                <div className="flex items-start gap-4">
                   <div className={cn(
                     "p-3 rounded-xl bg-gradient-to-br text-white transition-transform group-hover:scale-110",
                     product.gradient
@@ -110,7 +110,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
         <div className="mt-20">
           <h3 className={cn(
             "text-2xl font-bold text-slate-800 dark:text-white mb-8",
-            isRTL ? "text-right" : "text-center"
+            !isRTL && "text-center"
           )}>
             {isRTL ? "خدمات تخصصی" : "Specialized Services"}
           </h3>
@@ -119,10 +119,7 @@ export function ProductsSection({ t, locale }: ProductsSectionProps) {
             {services.map((service, index) => (
               <div
                 key={index}
-                className={cn(
-                  "flex items-start gap-4 p-6 bg-white dark:bg-[#3a5a80] rounded-xl border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow",
-                  isRTL && "flex-row-reverse"
-                )}
+                className="flex items-start gap-4 p-6 bg-white dark:bg-[#3a5a80] rounded-xl border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="bg-primary/8 p-3 rounded-xl flex-shrink-0 border border-primary/10">
                   <Snowflake className="h-5 w-5 text-primary" />

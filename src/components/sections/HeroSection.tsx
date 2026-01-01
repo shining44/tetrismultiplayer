@@ -49,15 +49,9 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className={cn(
-          "max-w-4xl",
-          isRTL ? "mr-auto ml-0" : "ml-0 mr-auto"
-        )}>
+        <div className="max-w-4xl">
           {/* Badge */}
-          <div className={cn(
-            "inline-flex items-center gap-2 bg-primary/8 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8 border border-primary/10",
-            isRTL && "flex-row-reverse"
-          )}>
+          <div className="inline-flex items-center gap-2 bg-primary/8 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8 border border-primary/10">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
             {isRTL ? "از سال ۱۳۷۵ در خدمت صنعت ایران" : "Serving Iran's Industry Since 1997"}
           </div>
@@ -80,13 +74,13 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
           </p>
 
           {/* CTA Buttons */}
-          <div className={cn("flex flex-wrap gap-4 mb-14", isRTL && "flex-row-reverse")}>
+          <div className="flex flex-wrap gap-4 mb-14">
             <Button size="xl" asChild className="group shadow-lg shadow-primary/20">
-              <Link href={`/${locale}#contact`} className={cn("flex items-center gap-2", isRTL && "flex-row-reverse")}>
+              <Link href={`/${locale}#contact`} className="flex items-center gap-2">
                 {t.hero.cta}
                 <Arrow className={cn(
                   "h-4 w-4 transition-transform",
-                  isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1"
+                  isRTL ? "group-hover:translate-x-1" : "group-hover:translate-x-1"
                 )} />
               </Link>
             </Button>
@@ -98,15 +92,13 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
           </div>
 
           {/* Stats */}
-          <div className={cn(
-            "grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-10 border-t border-slate-100 dark:border-sky-700/50"
-          )}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-10 border-t border-slate-100 dark:border-sky-700/50">
             {stats.map((stat, index) => (
-              <div key={index} className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
+              <div key={index} className="flex items-center gap-3">
                 <div className="bg-primary/8 p-3 rounded-xl border border-primary/10">
                   <stat.icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className={isRTL ? "text-right" : "text-left"}>
+                <div>
                   <div className="text-2xl font-bold text-slate-800 dark:text-white">{stat.value}</div>
                   <div className="text-sm text-slate-500 dark:text-sky-200">{stat.label}</div>
                 </div>
@@ -117,9 +109,9 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
       </div>
 
       {/* Scroll Indicator - hidden on mobile */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-slate-400">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex ltr-flex flex-col items-center gap-2 text-slate-400">
         <span className="text-xs font-medium">{isRTL ? "اسکرول کنید" : "Scroll down"}</span>
-        <div className="w-6 h-10 rounded-full border-2 border-slate-200 dark:border-sky-600 flex items-start justify-center p-1">
+        <div className="w-6 h-10 rounded-full border-2 border-slate-200 dark:border-sky-600 flex ltr-flex items-start justify-center p-1">
           <div className="w-1.5 h-3 bg-slate-300 dark:bg-sky-400 rounded-full animate-bounce" />
         </div>
       </div>

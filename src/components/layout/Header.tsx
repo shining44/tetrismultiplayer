@@ -49,38 +49,26 @@ export function Header({ t, locale }: HeaderProps) {
     <>
       {/* Top Bar */}
       <div className="hidden md:block bg-primary text-primary-foreground py-2">
-        <div className={cn(
-          "container mx-auto px-4 flex justify-between items-center text-sm",
-          isRTL && "flex-row-reverse"
-        )}>
-          <div className={cn("flex items-center gap-6", isRTL && "flex-row-reverse")}>
+        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
+          <div className="flex items-center gap-6">
             <a
               href="tel:+982188601973"
-              className={cn(
-                "flex items-center gap-2 hover:text-primary-foreground/80 transition-colors",
-                isRTL && "flex-row-reverse"
-              )}
+              className="flex items-center gap-2 hover:text-primary-foreground/80 transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span dir="ltr">{isRTL ? "۰۲۱-۸۸۶۰۱۹۷۳" : "+98 21 8860 1973"}</span>
+              <span className="ltr-text">{isRTL ? "۰۲۱-۸۸۶۰۱۹۷۳" : "+98 21 8860 1973"}</span>
             </a>
             <a
               href="mailto:info@koohsaran.com"
-              className={cn(
-                "flex items-center gap-2 hover:text-primary-foreground/80 transition-colors",
-                isRTL && "flex-row-reverse"
-              )}
+              className="flex items-center gap-2 hover:text-primary-foreground/80 transition-colors"
             >
               <Mail className="h-4 w-4" />
-              <span>info@koohsaran.com</span>
+              <span className="ltr-text">info@koohsaran.com</span>
             </a>
           </div>
           <Link
             href={`/${otherLocale}${pathname.replace(`/${locale}`, "")}`}
-            className={cn(
-              "flex items-center gap-2 hover:text-primary-foreground/80 transition-colors",
-              isRTL && "flex-row-reverse"
-            )}
+            className="flex items-center gap-2 hover:text-primary-foreground/80 transition-colors"
           >
             <Globe className="h-4 w-4" />
             <span>{localeLabel}</span>
@@ -98,13 +86,13 @@ export function Header({ t, locale }: HeaderProps) {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className={cn("flex h-16 items-center justify-between", isRTL && "flex-row-reverse")}>
+          <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link href={`/${locale}`} className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
+            <Link href={`/${locale}`} className="flex items-center gap-3">
               <div className="bg-primary rounded-xl p-2">
                 <Mountain className="h-6 w-6 text-primary-foreground" />
               </div>
-              <div className={cn("flex flex-col", isRTL && "items-end")}>
+              <div className="flex flex-col">
                 <span className="font-bold text-lg leading-tight text-slate-800 dark:text-white">
                   {isRTL ? "کوهساران" : "Koohsaran"}
                 </span>
@@ -115,7 +103,7 @@ export function Header({ t, locale }: HeaderProps) {
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className={cn("hidden lg:flex items-center gap-1", isRTL && "flex-row-reverse")}>
+            <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -131,7 +119,7 @@ export function Header({ t, locale }: HeaderProps) {
             </nav>
 
             {/* Desktop CTA & Language */}
-            <div className={cn("hidden lg:flex items-center gap-4", isRTL && "flex-row-reverse")}>
+            <div className="hidden lg:flex items-center gap-4">
               <Link
                 href={`/${otherLocale}${pathname.replace(`/${locale}`, "")}`}
                 className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-primary transition-colors"
@@ -153,10 +141,7 @@ export function Header({ t, locale }: HeaderProps) {
                 </Button>
               </SheetTrigger>
               <SheetContent side={isRTL ? "right" : "left"} className="w-[300px] bg-white dark:bg-[#1e3a5f]">
-                <SheetTitle className={cn(
-                  "flex items-center gap-3 mb-8",
-                  isRTL && "flex-row-reverse justify-end"
-                )}>
+                <SheetTitle className="flex items-center gap-3 mb-8">
                   <div className="bg-primary rounded-xl p-2">
                     <Mountain className="h-5 w-5 text-primary-foreground" />
                   </div>
@@ -182,10 +167,7 @@ export function Header({ t, locale }: HeaderProps) {
                   <Link
                     href={`/${otherLocale}${pathname.replace(`/${locale}`, "")}`}
                     onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "flex items-center gap-2 px-4 py-3 text-slate-500 hover:text-primary transition-colors",
-                      isRTL && "flex-row-reverse"
-                    )}
+                    className="flex items-center gap-2 px-4 py-3 text-slate-500 hover:text-primary transition-colors"
                   >
                     <Globe className="h-4 w-4" />
                     <span>{locale === "fa" ? "English" : "فارسی"}</span>

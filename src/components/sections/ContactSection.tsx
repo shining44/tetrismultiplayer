@@ -59,7 +59,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          !isRTL && "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "تماس با ما" : "Contact Us"}
@@ -72,12 +72,9 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
           </p>
         </div>
 
-        <div className={cn(
-          "grid lg:grid-cols-5 gap-8",
-          isRTL && "direction-rtl"
-        )}>
+        <div className="grid lg:grid-cols-5 gap-8">
           {/* Contact Info */}
-          <div className={cn("lg:col-span-2 space-y-6", isRTL && "lg:order-2")}>
+          <div className="lg:col-span-2 space-y-6 lg:order-2">
             <Card className="border-0 shadow-lg bg-gradient-to-br from-primary to-primary/90 text-white overflow-hidden">
               <CardContent className="p-8 relative">
                 {/* Decorative circles */}
@@ -91,7 +88,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                   {contactInfo.map((item, index) => (
                     <div
                       key={index}
-                      className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}
+                      className="flex items-start gap-4"
                     >
                       <div className="bg-white/15 p-2.5 rounded-xl flex-shrink-0">
                         <item.icon className="h-5 w-5" />
@@ -103,8 +100,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                             href={item.href}
                             target={item.href.startsWith("http") ? "_blank" : undefined}
                             rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            className="text-sm font-medium hover:underline"
-                            dir={item.icon === Phone ? "ltr" : undefined}
+                            className={cn("text-sm font-medium hover:underline", item.icon === Phone && "ltr-text")}
                           >
                             {item.value}
                           </a>
@@ -117,11 +113,11 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                 </div>
 
                 {/* Social Links */}
-                <div className={cn("mt-8 pt-6 border-t border-white/15 relative")}>
+                <div className="mt-8 pt-6 border-t border-white/15 relative">
                   <p className="text-sm text-white/70 mb-4">
                     {isRTL ? "ما را در شبکه‌های اجتماعی دنبال کنید" : "Follow us on social media"}
                   </p>
-                  <div className={cn("flex gap-3", isRTL && "flex-row-reverse")}>
+                  <div className="flex gap-3">
                     <a
                       href="https://instagram.com/tahvieh.koohsaran"
                       target="_blank"
@@ -149,7 +145,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
           </div>
 
           {/* Contact Form */}
-          <div className={cn("lg:col-span-3", isRTL && "lg:order-1")}>
+          <div className="lg:col-span-3 lg:order-1">
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm dark:bg-[#3a5a80]">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -170,11 +166,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                         type="email"
                         placeholder="example@email.com"
                         required
-                        dir="ltr"
-                        className={cn(
-                          "border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]",
-                          isRTL && "text-left"
-                        )}
+                        className="border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73] ltr-text"
                       />
                     </div>
                   </div>
@@ -186,11 +178,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                         id="phone"
                         type="tel"
                         placeholder={isRTL ? "۰۹۱۲۳۴۵۶۷۸۹" : "09123456789"}
-                        dir="ltr"
-                        className={cn(
-                          "border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73]",
-                          isRTL && "text-left"
-                        )}
+                        className="border-slate-200 dark:border-sky-600 focus:border-primary dark:bg-[#264b73] ltr-text"
                       />
                     </div>
                     <div className="space-y-2">
@@ -220,10 +208,7 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className={cn(
-                      "w-full md:w-auto gap-2 shadow-lg shadow-primary/20",
-                      isRTL && "flex-row-reverse"
-                    )}
+                    className="w-full md:w-auto gap-2 shadow-lg shadow-primary/20"
                   >
                     {isSubmitting ? (
                       <>
