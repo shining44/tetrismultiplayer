@@ -95,8 +95,9 @@
   --radius-md: var(--radius);
   --radius-lg: calc(var(--radius) + 4px);
   --radius-xl: calc(var(--radius) + 8px);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Use system fonts - Vazirmatn is loaded via Google Fonts for RTL */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 }
 
 * {
@@ -106,12 +107,12 @@
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 /* RTL Support with Vazirmatn from Google Fonts */
 [dir="rtl"] {
-  font-family: 'Vazirmatn', var(--font-sans), system-ui, sans-serif;
+  font-family: 'Vazirmatn', var(--font-sans);
   /* Increase base font size for Farsi text readability */
   font-size: 110%;
   line-height: 1.8;
