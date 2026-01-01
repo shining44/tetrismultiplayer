@@ -19,7 +19,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          !isRTL && "mx-auto text-center"
+          isRTL ? "ml-auto" : "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "درباره ما" : "About Us"}
