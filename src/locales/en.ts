@@ -1,0 +1,126 @@
+import { Translation } from "@/types/i18n"
+
+export const en: Translation = {
+  nav: {
+    home: "Home",
+    about: "About Us",
+    products: "Products & Services",
+    projects: "Projects",
+    certifications: "Certifications",
+    contact: "Contact",
+  },
+  hero: {
+    title: "Koohsaran HVAC",
+    subtitle: "Leading HVAC Solutions in Iran",
+    description:
+      "With nearly 30 years of experience in design, manufacturing, and implementation of HVAC systems and mechanical installations, Koohsaran is your trusted partner for projects of all sizes.",
+    cta: "Free Consultation",
+    stats: {
+      projects: "700+ Successful Projects",
+      experience: "Nearly 30 Years Experience",
+      partners: "International Partners",
+      area: "10M+ Square Meters",
+    },
+  },
+  about: {
+    title: "About Koohsaran",
+    subtitle: "A Brilliant Track Record in Iran's HVAC Industry",
+    history:
+      "Koohsaran HVAC Company was established in 1997 in Tehran and with a registered capital of 80 billion Rials, has become one of the most experienced and reputable companies in Iran's HVAC industry. Over the years, we have successfully completed hundreds of public and private projects across the country.",
+    mission:
+      "Our mission is to provide comprehensive and innovative solutions in HVAC and mechanical installations, relying on up-to-date technical knowledge, environmental protection, and energy consumption optimization.",
+    vision:
+      "Our vision is to become the leading provider of green and energy-efficient solutions in the regional HVAC industry.",
+    values: {
+      title: "Our Values",
+      items: [
+        "Quality and Global Standards",
+        "Innovation and Modern Technologies",
+        "Environmental Protection",
+        "Customer Satisfaction",
+        "Sustainable Development",
+      ],
+    },
+  },
+  products: {
+    title: "Products & Services",
+    subtitle: "Complete Range of HVAC Equipment and Services",
+    categories: {
+      chillers: {
+        title: "Chillers",
+        description:
+          "Water-cooled and air-cooled chillers, compression chillers (screw, scroll, Turbocor) and absorption chillers (single-effect, double-effect, direct-fired, multi-source)",
+      },
+      ahu: {
+        title: "Air Handling Units (AHU)",
+        description:
+          "Design and manufacture of various air handling units with diverse capabilities for industrial, commercial, and hospital applications",
+      },
+      fancoil: {
+        title: "Fan Coil Units",
+        description:
+          "High-quality ceiling, wall-mounted, and ducted fan coil units with optimal performance",
+      },
+      rooftop: {
+        title: "Rooftop Packages",
+        description:
+          "Integrated cooling and heating systems suitable for commercial and industrial centers",
+      },
+      ductsplit: {
+        title: "Duct Split Systems",
+        description:
+          "Duct split systems with various capacities for residential and commercial buildings",
+      },
+      coolingtower: {
+        title: "Cooling Towers",
+        description:
+          "Fiberglass and metal cooling towers with optimized design and high efficiency",
+      },
+    },
+  },
+  projects: {
+    title: "Featured Projects",
+    subtitle: "Over 700 Successful Projects Across Iran",
+    categories: {
+      all: "All",
+      commercial: "Commercial & Office",
+      industrial: "Industrial",
+      healthcare: "Healthcare",
+      hospitality: "Hotels & Hospitality",
+      educational: "Universities",
+      residential: "Residential",
+    },
+  },
+  certifications: {
+    title: "Certifications & Standards",
+    subtitle: "Commitment to Quality and Global Standards",
+    partners: "International Business Partners",
+  },
+  contact: {
+    title: "Contact Us",
+    subtitle: "We are ready to answer your questions",
+    form: {
+      name: "Full Name",
+      email: "Email",
+      phone: "Phone Number",
+      subject: "Subject",
+      message: "Your Message",
+      submit: "Send Message",
+    },
+    info: {
+      address:
+        "No. 26, Unit 1, Ettehad Alley, South Shiraz St., Molla Sadra St., Tehran, Iran",
+      phone: "+98 21 8860 1973",
+      fax: "+98 21 8860 1972",
+      email: "info@koohsaran.com",
+    },
+  },
+  footer: {
+    description:
+      "Koohsaran HVAC Company, with nearly three decades of experience, provides comprehensive solutions in HVAC and mechanical building installations.",
+    quickLinks: "Quick Links",
+    services: "Our Services",
+    contact: "Contact Information",
+    copyright: "All rights reserved.",
+  },
+}
