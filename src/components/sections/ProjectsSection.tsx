@@ -35,11 +35,14 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
     <section id="projects" className="py-20 lg:py-28 bg-white dark:bg-slate-950">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className={cn("max-w-3xl mb-12", isRTL ? "mr-auto text-right" : "mx-auto text-center")}>
+        <div className={cn(
+          "max-w-3xl mb-12",
+          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+        )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "پروژه‌ها" : "Projects"}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.projects.title}
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400">
@@ -50,12 +53,15 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
         {/* Projects Tabs */}
         <Tabs defaultValue="all" className="w-full">
           <div className={cn("flex justify-center mb-8", isRTL && "flex-row-reverse")}>
-            <TabsList className="flex-wrap h-auto gap-2 bg-slate-100 dark:bg-slate-800 p-2">
+            <TabsList className={cn(
+              "flex-wrap h-auto gap-2 bg-slate-100 dark:bg-slate-800 p-2 rounded-xl",
+              isRTL && "flex-row-reverse"
+            )}>
               {categories.map((cat) => (
                 <TabsTrigger
                   key={cat.id}
                   value={cat.id}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-white"
+                  className="data-[state=active]:bg-primary data-[state=active]:text-white rounded-lg"
                 >
                   {cat.label}
                 </TabsTrigger>
@@ -69,24 +75,30 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                 {getFilteredProjects(cat.id).map((project) => (
                   <Card
                     key={project.id}
-                    className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                    className="group overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 bg-white dark:bg-slate-800"
                   >
                     {/* Project Image Placeholder */}
-                    <div className="relative h-48 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 overflow-hidden">
+                    <div className="relative h-48 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Building2 className="h-16 w-16 text-slate-400 dark:text-slate-600" />
+                        <Building2 className="h-16 w-16 text-slate-300 dark:text-slate-600" />
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <Badge className="absolute top-4 right-4" variant="secondary">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <Badge className={cn(
+                        "absolute top-4",
+                        isRTL ? "left-4" : "right-4"
+                      )} variant="secondary">
                         {t.projects.categories[project.category as keyof typeof t.projects.categories]}
                       </Badge>
                     </div>
 
-                    <CardContent className={cn("p-5", isRTL && "text-right")}>
-                      <h3 className="font-semibold text-lg text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                    <CardContent className="p-5">
+                      <h3 className="font-semibold text-lg text-slate-800 dark:text-white mb-2 group-hover:text-primary transition-colors">
                         {isRTL ? project.nameFA : project.nameEN}
                       </h3>
-                      <div className={cn("flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400", isRTL && "flex-row-reverse")}>
+                      <div className={cn(
+                        "flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400",
+                        isRTL && "flex-row-reverse"
+                      )}>
                         <MapPin className="h-4 w-4" />
                         <span>{isRTL ? project.locationFA : project.locationEN}</span>
                       </div>
@@ -99,10 +111,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
         </Tabs>
 
         {/* Stats Summary */}
-        <div className={cn(
-          "mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-gradient-to-r from-primary/5 via-blue-500/5 to-primary/5 rounded-2xl",
-          isRTL && "text-right"
-        )}>
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 p-8 bg-gradient-to-r from-primary/5 via-blue-500/5 to-primary/5 rounded-2xl border border-primary/10">
           {[
             { value: isRTL ? "+۳۵" : "35+", label: isRTL ? "بیمارستان" : "Hospitals" },
             { value: isRTL ? "+۵۰" : "50+", label: isRTL ? "مجموعه ورزشی" : "Sports Facilities" },
