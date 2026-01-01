@@ -49,7 +49,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
       />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl">
+        <div className={cn("max-w-4xl", isRTL && "mr-auto ml-0")}>
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/8 text-primary px-4 py-2 rounded-full text-sm font-medium mb-8 border border-primary/10">
             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -80,7 +80,7 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
                 {t.hero.cta}
                 <Arrow className={cn(
                   "h-4 w-4 transition-transform",
-                  isRTL ? "group-hover:translate-x-1" : "group-hover:translate-x-1"
+                  isRTL ? "group-hover:-translate-x-1" : "group-hover:translate-x-1"
                 )} />
               </Link>
             </Button>
