@@ -18,11 +18,14 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
     <section id="certifications" className="py-20 lg:py-28 bg-slate-50 dark:bg-slate-900">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className={cn("max-w-3xl mb-16", isRTL ? "mr-auto text-right" : "mx-auto text-center")}>
+        <div className={cn(
+          "max-w-3xl mb-16",
+          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+        )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "گواهینامه‌ها" : "Certifications"}
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">
             {t.certifications.title}
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-400">
@@ -35,22 +38,21 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
           {certifications.map((cert, index) => (
             <Card
               key={index}
-              className={cn(
-                "border-0 shadow-lg hover:shadow-xl transition-all duration-300 text-center group",
-                isRTL && "text-right"
-              )}
+              className="border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all duration-300 group bg-white dark:bg-slate-800"
             >
-              <CardContent className="p-6">
+              <CardContent className="p-6 text-center">
                 <div className={cn(
-                  "w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform",
-                  isRTL ? "mr-auto" : "mx-auto"
+                  "w-16 h-16 rounded-full bg-primary/8 border border-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto"
                 )}>
                   <Award className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-2">
+                <h3 className="font-bold text-xl text-slate-800 dark:text-white mb-2">
                   {isRTL ? cert.nameFA : cert.name}
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                <p className={cn(
+                  "text-sm text-slate-600 dark:text-slate-400 mb-2",
+                  isRTL && "leading-relaxed"
+                )}>
                   {isRTL ? cert.descriptionFA : cert.description}
                 </p>
                 <p className="text-xs text-primary font-medium">
@@ -63,7 +65,10 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
 
         {/* Partners Section */}
         <div className={cn("text-center", isRTL && "text-right")}>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">
+          <h3 className={cn(
+            "text-2xl font-bold text-slate-800 dark:text-white mb-8",
+            isRTL ? "text-right" : "text-center"
+          )}>
             {t.certifications.partners}
           </h3>
 
@@ -71,26 +76,23 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
             {partners.map((partner, index) => (
               <Card
                 key={index}
-                className={cn(
-                  "border-0 shadow-md hover:shadow-lg transition-all duration-300 group",
-                  isRTL && "text-right"
-                )}
+                className="border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300 group bg-white dark:bg-slate-800"
               >
                 <CardContent className="p-6 text-center">
                   {/* Logo Placeholder */}
-                  <div className={cn(
-                    "w-20 h-20 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors",
-                    isRTL ? "mr-auto" : "mx-auto"
-                  )}>
+                  <div className="w-20 h-20 rounded-xl bg-slate-50 dark:bg-slate-700 flex items-center justify-center mb-4 group-hover:bg-primary/8 transition-colors mx-auto border border-slate-100 dark:border-slate-600">
                     <Globe2 className="h-10 w-10 text-slate-400 group-hover:text-primary transition-colors" />
                   </div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white mb-1">
+                  <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
                     {partner.name}
                   </h4>
                   <p className="text-xs text-primary font-medium mb-2">
                     {isRTL ? partner.countryFA : partner.country}
                   </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className={cn(
+                    "text-xs text-slate-500 dark:text-slate-400",
+                    isRTL && "leading-relaxed"
+                  )}>
                     {isRTL ? partner.descriptionFA : partner.description}
                   </p>
                 </CardContent>
@@ -100,10 +102,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
         </div>
 
         {/* Additional Features */}
-        <div className={cn(
-          "mt-16 grid md:grid-cols-3 gap-8 p-8 bg-white dark:bg-slate-800 rounded-2xl shadow-lg",
-          isRTL && "text-right"
-        )}>
+        <div className="mt-16 grid md:grid-cols-3 gap-8 p-8 bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm">
           {[
             {
               icon: Shield,
@@ -131,14 +130,17 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
               key={index}
               className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}
             >
-              <div className="bg-primary/10 p-3 rounded-lg flex-shrink-0">
+              <div className="bg-primary/8 p-3 rounded-xl flex-shrink-0 border border-primary/10">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 dark:text-white mb-1">
+                <h4 className="font-semibold text-slate-800 dark:text-white mb-1">
                   {isRTL ? feature.titleFA : feature.titleEN}
                 </h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400">
+                <p className={cn(
+                  "text-sm text-slate-600 dark:text-slate-400",
+                  isRTL && "leading-relaxed"
+                )}>
                   {isRTL ? feature.descFA : feature.descEN}
                 </p>
               </div>

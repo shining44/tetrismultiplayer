@@ -61,23 +61,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
       <head>
-        {/* Preload Vazirmatn font for Persian */}
-        {isRTL && (
-          <>
-            <link
-              rel="preconnect"
-              href="https://cdn.jsdelivr.net"
-              crossOrigin="anonymous"
-            />
-            <link
-              rel="preload"
-              href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2"
-              as="font"
-              type="font/woff2"
-              crossOrigin="anonymous"
-            />
-          </>
-        )}
+        {/* Google Fonts preconnect for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <Header t={t} locale={locale} />
