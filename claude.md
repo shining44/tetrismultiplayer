@@ -99,6 +99,26 @@ Vazirmatn is loaded from Google Fonts via CSS import in `globals.css`:
 }
 ```
 
+## GitHub Pages Deployment
+
+**IMPORTANT**: The `/docs` folder contains the static export and must be rebuilt after any source code changes (CSS, components, translations, etc.).
+
+### Deployment Workflow
+1. Make source code changes (in `/src`)
+2. Run `npm run deploy` to rebuild the static export
+3. Commit both source changes AND the updated `/docs` folder
+4. Push to GitHub - changes will appear on GitHub Pages
+
+### Common Issue
+If styles, fonts, or content changes don't appear on the live site, it's likely because the `/docs` folder wasn't rebuilt. Always run `npm run deploy` after making changes.
+
+### Deployment Script
+```bash
+npm run deploy    # Runs: npm run build && touch docs/.nojekyll
+```
+
+The `.nojekyll` file is required to prevent GitHub Pages from processing the site with Jekyll.
+
 ## Adding New Sections
 
 1. Create component in `/src/components/sections/`
