@@ -73,8 +73,8 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Contact Info */}
-          <div className="lg:col-span-2 space-y-6 lg:order-2">
+          {/* Contact Info - Primary for RTL, should be on RIGHT */}
+          <div className={cn("lg:col-span-2 space-y-6 lg:order-2", isRTL && "lg:order-1")}>
             <Card className="border-0 shadow-lg bg-gradient-to-br from-primary to-primary/90 text-white overflow-hidden">
               <CardContent className="p-8 relative">
                 {/* Decorative circles */}
@@ -144,8 +144,8 @@ export function ContactSection({ t, locale }: ContactSectionProps) {
             </Card>
           </div>
 
-          {/* Contact Form */}
-          <div className="lg:col-span-3 lg:order-1">
+          {/* Contact Form - Secondary for RTL, should be on LEFT */}
+          <div className={cn("lg:col-span-3 lg:order-1", isRTL && "lg:order-2")}>
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm dark:bg-[#3a5a80]">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">

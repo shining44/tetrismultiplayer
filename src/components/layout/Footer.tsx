@@ -35,9 +35,9 @@ export function Footer({ t, locale }: FooterProps) {
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1 lg:order-4">
-            <Link href={`/${locale}`} className="flex items-center gap-3 mb-4">
+          {/* Company Info - Rightmost in RTL (most important), Rightmost in LTR */}
+          <div className={cn("lg:col-span-1", isRTL ? "lg:order-1" : "lg:order-4")}>
+            <Link href={`/${locale}`} className="flex ltr-flex items-center gap-3 mb-4">
               <div className="bg-primary rounded-xl p-2">
                 <Mountain className="h-6 w-6 text-primary-foreground" />
               </div>
@@ -77,7 +77,7 @@ export function Footer({ t, locale }: FooterProps) {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:order-3">
+          <div className={cn(isRTL ? "lg:order-2" : "lg:order-3")}>
             <h3 className="font-semibold text-white mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -94,7 +94,7 @@ export function Footer({ t, locale }: FooterProps) {
           </div>
 
           {/* Services */}
-          <div className="lg:order-2">
+          <div className={cn(isRTL ? "lg:order-3" : "lg:order-2")}>
             <h3 className="font-semibold text-white mb-4">{t.footer.services}</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
@@ -110,8 +110,8 @@ export function Footer({ t, locale }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="lg:order-1">
+          {/* Contact Info - Leftmost in RTL, Leftmost in LTR */}
+          <div className={cn(isRTL ? "lg:order-4" : "lg:order-1")}>
             <h3 className="font-semibold text-white mb-4">{t.footer.contact}</h3>
             <ul className="space-y-4">
               <li>

@@ -34,8 +34,8 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* History Column */}
-          <div className="lg:order-2">
+          {/* History Column - Primary content, should be on RIGHT in RTL */}
+          <div className={cn("lg:order-2", isRTL && "lg:order-1")}>
             <div className="relative">
               {/* Decorative element */}
               <div className="absolute -top-4 w-20 h-1 bg-primary rounded-full right-0" />
@@ -70,8 +70,8 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
             </div>
           </div>
 
-          {/* Mission, Vision, Values Column */}
-          <div className="space-y-6 lg:order-1">
+          {/* Mission, Vision, Values Column - Secondary content, should be on LEFT in RTL */}
+          <div className={cn("space-y-6 lg:order-1", isRTL && "lg:order-2")}>
             {/* Mission Card */}
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/3 to-transparent dark:bg-[#3a5a80]">
               <CardContent className="p-6">

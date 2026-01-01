@@ -80,7 +80,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                         <Building2 className="h-16 w-16 text-slate-300 dark:text-sky-400" />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <Badge className="absolute top-4 right-4" variant="secondary">
+                      <Badge className={cn("absolute top-4", isRTL ? "left-4" : "right-4")} variant="secondary">
                         {t.projects.categories[project.category as keyof typeof t.projects.categories]}
                       </Badge>
                     </div>

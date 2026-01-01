@@ -87,8 +87,8 @@ export function Header({ t, locale }: HeaderProps) {
       >
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <Link href={`/${locale}`} className="flex items-center gap-3">
+            {/* Logo - keep icon position consistent in both LTR and RTL */}
+            <Link href={`/${locale}`} className="flex ltr-flex items-center gap-3">
               <div className="bg-primary rounded-xl p-2">
                 <Mountain className="h-6 w-6 text-primary-foreground" />
               </div>
@@ -141,7 +141,7 @@ export function Header({ t, locale }: HeaderProps) {
                 </Button>
               </SheetTrigger>
               <SheetContent side={isRTL ? "right" : "left"} className="w-[300px] bg-white dark:bg-[#1e3a5f]">
-                <SheetTitle className="flex items-center gap-3 mb-8">
+                <SheetTitle className="flex ltr-flex items-center gap-3 mb-8">
                   <div className="bg-primary rounded-xl p-2">
                     <Mountain className="h-5 w-5 text-primary-foreground" />
                   </div>

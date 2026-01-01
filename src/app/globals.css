@@ -335,13 +335,22 @@ html {
   --tw-space-x-reverse: 1;
 }
 
-/* RTL order utilities for grid columns */
-[dir="rtl"] .lg\:order-1 {
-  order: 2;
+/* RTL order utilities for grid columns - explicit classes */
+/* Use rtl:order-X classes in components for explicit RTL ordering */
+[dir="rtl"] .rtl\:order-1 {
+  order: 1 !important;
 }
 
-[dir="rtl"] .lg\:order-2 {
-  order: 1;
+[dir="rtl"] .rtl\:order-2 {
+  order: 2 !important;
+}
+
+[dir="rtl"] .rtl\:order-3 {
+  order: 3 !important;
+}
+
+[dir="rtl"] .rtl\:order-4 {
+  order: 4 !important;
 }
 
 /* Justify content RTL adjustments */
@@ -371,4 +380,47 @@ html {
 .ltr-text {
   direction: ltr;
   text-align: left;
+}
+
+/* RTL-specific alignment utilities */
+[dir="rtl"] .rtl\:text-right {
+  text-align: right !important;
+}
+
+[dir="rtl"] .rtl\:mr-auto {
+  margin-right: auto !important;
+  margin-left: 0;
+}
+
+[dir="rtl"] .rtl\:ml-0 {
+  margin-left: 0 !important;
+}
+
+/* RTL badge positioning */
+[dir="rtl"] .rtl\:left-4 {
+  left: 1rem !important;
+  right: auto !important;
+}
+
+[dir="rtl"] .rtl\:right-auto {
+  right: auto !important;
+}
+
+/* Prevent double-reversal in nested flex containers */
+[dir="rtl"] .flex .flex:not(.flex-col):not(.flex-col-reverse):not(.ltr-flex) {
+  flex-direction: row;
+}
+
+/* RTL-aware hover transforms */
+[dir="rtl"] .rtl\:group-hover\:-translate-x-1:hover,
+[dir="rtl"] .group:hover .rtl\:group-hover\:-translate-x-1 {
+  --tw-translate-x: -0.25rem;
+  transform: translateX(var(--tw-translate-x));
+}
+
+/* Ensure section headers align properly in RTL */
+[dir="rtl"] section .max-w-3xl:not(.mx-auto),
+[dir="rtl"] section .max-w-4xl:not(.mx-auto) {
+  margin-left: auto;
+  margin-right: 0;
 }
