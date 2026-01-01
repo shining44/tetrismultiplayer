@@ -116,8 +116,8 @@ export function HeroSection({ t, locale }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400">
+      {/* Scroll Indicator - hidden on mobile */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-slate-400">
         <span className="text-xs font-medium">{isRTL ? "اسکرول کنید" : "Scroll down"}</span>
         <div className="w-6 h-10 rounded-full border-2 border-slate-200 dark:border-sky-600 flex items-start justify-center p-1">
           <div className="w-1.5 h-3 bg-slate-300 dark:bg-sky-400 rounded-full animate-bounce" />
