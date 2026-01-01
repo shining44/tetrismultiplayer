@@ -34,19 +34,14 @@ export function Footer({ t, locale }: FooterProps) {
     <footer className="bg-slate-900 dark:bg-[#162a45] text-slate-300">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className={cn(
-          "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
-        )}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
-          <div className={cn("lg:col-span-1", isRTL && "lg:order-4")}>
-            <Link href={`/${locale}`} className={cn(
-              "flex items-center gap-3 mb-4",
-              isRTL && "flex-row-reverse justify-end"
-            )}>
+          <div className="lg:col-span-1 lg:order-4">
+            <Link href={`/${locale}`} className="flex items-center gap-3 mb-4">
               <div className="bg-primary rounded-xl p-2">
                 <Mountain className="h-6 w-6 text-primary-foreground" />
               </div>
-              <div className={cn("flex flex-col", isRTL && "items-end")}>
+              <div className="flex flex-col">
                 <span className="font-bold text-lg text-white">
                   {isRTL ? "کوهساران" : "Koohsaran"}
                 </span>
@@ -61,7 +56,7 @@ export function Footer({ t, locale }: FooterProps) {
             )}>
               {t.footer.description}
             </p>
-            <div className={cn("flex gap-3", isRTL && "justify-end")}>
+            <div className="flex gap-3">
               <a
                 href="https://instagram.com/tahvieh.koohsaran"
                 target="_blank"
@@ -82,7 +77,7 @@ export function Footer({ t, locale }: FooterProps) {
           </div>
 
           {/* Quick Links */}
-          <div className={isRTL ? "lg:order-3" : ""}>
+          <div className="lg:order-3">
             <h3 className="font-semibold text-white mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -99,7 +94,7 @@ export function Footer({ t, locale }: FooterProps) {
           </div>
 
           {/* Services */}
-          <div className={isRTL ? "lg:order-2" : ""}>
+          <div className="lg:order-2">
             <h3 className="font-semibold text-white mb-4">{t.footer.services}</h3>
             <ul className="space-y-3">
               {serviceLinks.map((link, index) => (
@@ -116,7 +111,7 @@ export function Footer({ t, locale }: FooterProps) {
           </div>
 
           {/* Contact Info */}
-          <div className={isRTL ? "lg:order-1" : ""}>
+          <div className="lg:order-1">
             <h3 className="font-semibold text-white mb-4">{t.footer.contact}</h3>
             <ul className="space-y-4">
               <li>
@@ -124,10 +119,7 @@ export function Footer({ t, locale }: FooterProps) {
                   href="https://maps.google.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cn(
-                    "flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm",
-                    isRTL && "flex-row-reverse"
-                  )}
+                  className="flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm"
                 >
                   <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span className={isRTL ? "leading-relaxed" : ""}>{t.contact.info.address}</span>
@@ -136,25 +128,19 @@ export function Footer({ t, locale }: FooterProps) {
               <li>
                 <a
                   href="tel:+982188601973"
-                  className={cn(
-                    "flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm items-center",
-                    isRTL && "flex-row-reverse"
-                  )}
+                  className="flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm items-center"
                 >
                   <Phone className="h-5 w-5 flex-shrink-0" />
-                  <span dir="ltr">{t.contact.info.phone}</span>
+                  <span className="ltr-text">{t.contact.info.phone}</span>
                 </a>
               </li>
               <li>
                 <a
                   href="mailto:info@koohsaran.com"
-                  className={cn(
-                    "flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm items-center",
-                    isRTL && "flex-row-reverse"
-                  )}
+                  className="flex gap-3 text-slate-400 hover:text-primary transition-colors text-sm items-center"
                 >
                   <Mail className="h-5 w-5 flex-shrink-0" />
-                  <span>{t.contact.info.email}</span>
+                  <span className="ltr-text">{t.contact.info.email}</span>
                 </a>
               </li>
             </ul>
@@ -165,14 +151,11 @@ export function Footer({ t, locale }: FooterProps) {
       {/* Bottom Bar */}
       <Separator className="bg-slate-800 dark:bg-sky-800/50" />
       <div className="container mx-auto px-4 py-6">
-        <div className={cn(
-          "flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400",
-          isRTL && "md:flex-row-reverse"
-        )}>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
           <p>
             © {yearDisplay} {isRTL ? "شرکت تهویه کوهساران." : "Koohsaran HVAC Company."} {t.footer.copyright}
           </p>
-          <p className={cn("flex items-center gap-1.5", isRTL && "flex-row-reverse")}>
+          <p className="flex items-center gap-1.5">
             {isRTL ? "طراحی و توسعه با" : "Designed & Developed with"}
             <span className="text-red-400">♥</span>
           </p>

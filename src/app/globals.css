@@ -122,6 +122,26 @@ body {
   font-family: inherit;
 }
 
+/* Automatic RTL flex reversal - flex rows become row-reverse in RTL */
+[dir="rtl"] .flex:not(.flex-col):not(.flex-col-reverse):not(.ltr-flex) {
+  flex-direction: row-reverse;
+}
+
+/* Preserve explicit row direction when needed */
+[dir="rtl"] .ltr-flex {
+  flex-direction: row !important;
+}
+
+/* Grid auto-flow for RTL */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+/* Ensure inline-flex also respects RTL */
+[dir="rtl"] .inline-flex:not(.ltr-flex) {
+  flex-direction: row-reverse;
+}
+
 /* Larger headings for RTL */
 [dir="rtl"] h1 {
   font-size: 2.75rem;
@@ -266,5 +286,89 @@ html {
 }
 
 [dir="ltr"] {
+  text-align: left;
+}
+
+/* RTL margin utilities - swap left/right margins */
+[dir="rtl"] .ml-auto {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .mr-auto {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .ml-0 {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* RTL positioning utilities */
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}
+
+/* RTL border utilities */
+[dir="rtl"] .border-l {
+  border-left: 0;
+  border-right-width: 1px;
+}
+
+[dir="rtl"] .border-r {
+  border-right: 0;
+  border-left-width: 1px;
+}
+
+/* RTL space utilities - reverse gap flow */
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* RTL order utilities for grid columns */
+[dir="rtl"] .lg\:order-1 {
+  order: 2;
+}
+
+[dir="rtl"] .lg\:order-2 {
+  order: 1;
+}
+
+/* Justify content RTL adjustments */
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+/* Items alignment RTL adjustments */
+[dir="rtl"] .items-start {
+  /* Keep items-start as is since it's cross-axis */
+}
+
+/* Text alignment should stay explicit */
+[dir="rtl"] .text-left:not(.ltr-text) {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right:not(.ltr-text) {
+  text-align: left;
+}
+
+/* Keep LTR text direction for specific elements like emails, numbers */
+.ltr-text {
+  direction: ltr;
   text-align: left;
 }

@@ -37,7 +37,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-12",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          !isRTL && "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "پروژه‌ها" : "Projects"}
@@ -52,11 +52,8 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
 
         {/* Projects Tabs */}
         <Tabs defaultValue="all" className="w-full">
-          <div className={cn("flex justify-center mb-8", isRTL && "flex-row-reverse")}>
-            <TabsList className={cn(
-              "flex-wrap h-auto gap-2 bg-slate-100 dark:bg-[#3a5a80] p-2 rounded-xl",
-              isRTL && "flex-row-reverse"
-            )}>
+          <div className="flex justify-center mb-8">
+            <TabsList className="flex-wrap h-auto gap-2 bg-slate-100 dark:bg-[#3a5a80] p-2 rounded-xl">
               {categories.map((cat) => (
                 <TabsTrigger
                   key={cat.id}
@@ -83,10 +80,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                         <Building2 className="h-16 w-16 text-slate-300 dark:text-sky-400" />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      <Badge className={cn(
-                        "absolute top-4",
-                        isRTL ? "left-4" : "right-4"
-                      )} variant="secondary">
+                      <Badge className="absolute top-4 right-4" variant="secondary">
                         {t.projects.categories[project.category as keyof typeof t.projects.categories]}
                       </Badge>
                     </div>
@@ -95,10 +89,7 @@ export function ProjectsSection({ t, locale }: ProjectsSectionProps) {
                       <h3 className="font-semibold text-lg text-slate-800 dark:text-white mb-2 group-hover:text-primary transition-colors">
                         {isRTL ? project.nameFA : project.nameEN}
                       </h3>
-                      <div className={cn(
-                        "flex items-center gap-2 text-sm text-slate-500 dark:text-sky-200",
-                        isRTL && "flex-row-reverse"
-                      )}>
+                      <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-sky-200">
                         <MapPin className="h-4 w-4" />
                         <span>{isRTL ? project.locationFA : project.locationEN}</span>
                       </div>

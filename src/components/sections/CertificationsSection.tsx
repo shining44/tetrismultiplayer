@@ -20,7 +20,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          !isRTL && "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "گواهینامه‌ها" : "Certifications"}
@@ -64,10 +64,10 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
         </div>
 
         {/* Partners Section */}
-        <div className={cn("text-center", isRTL && "text-right")}>
+        <div>
           <h3 className={cn(
             "text-2xl font-bold text-slate-800 dark:text-white mb-8",
-            isRTL ? "text-right" : "text-center"
+            !isRTL && "text-center"
           )}>
             {t.certifications.partners}
           </h3>
@@ -128,7 +128,7 @@ export function CertificationsSection({ t, locale }: CertificationsSectionProps)
           ].map((feature, index) => (
             <div
               key={index}
-              className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}
+              className="flex items-start gap-4"
             >
               <div className="bg-primary/8 p-3 rounded-xl flex-shrink-0 border border-primary/10">
                 <feature.icon className="h-6 w-6 text-primary" />

@@ -19,7 +19,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
         {/* Section Header */}
         <div className={cn(
           "max-w-3xl mb-16",
-          isRTL ? "mr-auto ml-0" : "mx-auto text-center"
+          !isRTL && "mx-auto text-center"
         )}>
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-2 block">
             {isRTL ? "درباره ما" : "About Us"}
@@ -33,18 +33,12 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
         </div>
 
         {/* Main Content Grid */}
-        <div className={cn(
-          "grid lg:grid-cols-2 gap-12 items-start",
-          isRTL && "direction-rtl"
-        )}>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* History Column */}
-          <div className={cn(isRTL && "lg:order-2")}>
+          <div className="lg:order-2">
             <div className="relative">
               {/* Decorative element */}
-              <div className={cn(
-                "absolute -top-4 w-20 h-1 bg-primary rounded-full",
-                isRTL ? "right-0" : "left-0"
-              )} />
+              <div className="absolute -top-4 w-20 h-1 bg-primary rounded-full right-0" />
 
               <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 pt-4">
                 {isRTL ? "تاریخچه و سابقه" : "History & Background"}
@@ -66,10 +60,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className={cn(
-                      "flex items-center gap-4 bg-slate-50 dark:bg-[#264b73] rounded-xl p-4 border border-slate-100 dark:border-sky-700/50",
-                      isRTL && "flex-row-reverse"
-                    )}
+                    className="flex items-center gap-4 bg-slate-50 dark:bg-[#264b73] rounded-xl p-4 border border-slate-100 dark:border-sky-700/50"
                   >
                     <div className="text-2xl font-bold text-primary">{item.value}</div>
                     <div className="text-slate-600 dark:text-sky-200">{item.label}</div>
@@ -80,11 +71,11 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
           </div>
 
           {/* Mission, Vision, Values Column */}
-          <div className={cn("space-y-6", isRTL && "lg:order-1")}>
+          <div className="space-y-6 lg:order-1">
             {/* Mission Card */}
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/3 to-transparent dark:bg-[#3a5a80]">
               <CardContent className="p-6">
-                <div className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}>
+                <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-xl flex-shrink-0">
                     <Target className="h-6 w-6 text-primary" />
                   </div>
@@ -106,7 +97,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
             {/* Vision Card */}
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-blue-500/3 to-transparent dark:bg-[#3a5a80]">
               <CardContent className="p-6">
-                <div className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}>
+                <div className="flex items-start gap-4">
                   <div className="bg-blue-500/10 p-3 rounded-xl flex-shrink-0">
                     <Eye className="h-6 w-6 text-blue-600" />
                   </div>
@@ -128,7 +119,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
             {/* Values Card */}
             <Card className="border border-slate-100 dark:border-sky-700/50 shadow-sm hover:shadow-md transition-shadow dark:bg-[#3a5a80]">
               <CardContent className="p-6">
-                <div className={cn("flex items-start gap-4", isRTL && "flex-row-reverse")}>
+                <div className="flex items-start gap-4">
                   <div className="bg-amber-500/10 p-3 rounded-xl flex-shrink-0">
                     <Award className="h-6 w-6 text-amber-600" />
                   </div>
@@ -140,10 +131,7 @@ export function AboutSection({ t, locale }: AboutSectionProps) {
                       {t.about.values.items.map((item, index) => (
                         <li
                           key={index}
-                          className={cn(
-                            "flex items-center gap-2 text-sm text-slate-600 dark:text-sky-100",
-                            isRTL && "flex-row-reverse"
-                          )}
+                          className="flex items-center gap-2 text-sm text-slate-600 dark:text-sky-100"
                         >
                           <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
                           <span>{item}</span>
